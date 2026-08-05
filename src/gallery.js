@@ -1,4 +1,6 @@
-const gallery=document.getElementById("gallery");
+const gallery = document.getElementById("gallery-grid");
+
+gallery.innerHTML = "";
 
 const photos=[
 
