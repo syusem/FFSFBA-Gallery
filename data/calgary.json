@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Photo One",
+    "caption": "Our first photo",
+    "thumbnail": "https://picsum.photos/400/300?1",
+    "large": "https://picsum.photos/1200/900?1"
+  },
+  {
+    "id": 2,
+    "title": "Photo Two",
+    "caption": "Another image",
+    "thumbnail": "https://picsum.photos/400/300?2",
+    "large": "https://picsum.photos/1200/900?2"
+  },
+  {
+    "id": 3,
+    "title": "Photo Three",
+    "caption": "Beautiful scenery",
+    "thumbnail": "https://picsum.photos/400/300?3",
+    "large": "https://picsum.photos/1200/900?3"
+  },
+  {
+    "id": 4,
+    "title": "Photo Four",
+    "caption": "Travel memories",
+    "thumbnail": "https://picsum.photos/400/300?4",
+    "large": "https://picsum.photos/1200/900?4"
+  },
+  {
+    "id": 5,
+    "title": "Photo Five",
+    "caption": "Wonderful trip",
+    "thumbnail": "https://picsum.photos/400/300?5",
+    "large": "https://picsum.photos/1200/900?5"
+  },
+  {
+    "id": 6,
+    "title": "Photo Six",
+    "caption": "Friends together",
+    "thumbnail": "https://picsum.photos/400/300?6",
+    "large": "https://picsum.photos/1200/900?6"
+  }
+]
+
+
