@@ -66,3 +66,10 @@ gallery.appendChild(card);
 
 
 
+
+
+console.log("FFSFBA Gallery Version 0.1");
+
+document.querySelector(".loading").textContent =
+    "Gallery engine loaded successfully!";
+
