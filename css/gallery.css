@@ -1,0 +1,63 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin:40px;
+
+    background:#fafafa;
+
+}
+
+h1{
+
+    text-align:center;
+
+}
+
+#gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.photo{
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+    transition:.25s;
+
+}
+
+.photo:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.caption{
+
+    padding:10px;
+
+    font-size:14px;
+
+}
+
+
