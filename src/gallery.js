@@ -1,77 +1,35 @@
-const gallery = document.getElementById("gallery-grid");
+async function loadGallery() {
 
-gallery.innerHTML = "";
+    const gallery = document.getElementById("gallery-grid");
 
-const photos=[
+    gallery.innerHTML = "<div class='loading'>Loading photos...</div>";
 
-{
-title:"Photo One",
-caption:"Our first photo",
-image:"https://picsum.photos/600/400?1"
-},
+    const response = await fetch("data/calgary.json");
 
-{
-title:"Photo Two",
-caption:"Another image",
-image:"https://picsum.photos/600/400?2"
-},
+    const photos = await response.json();
 
-{
-title:"Photo Three",
-caption:"Beautiful scenery",
-image:"https://picsum.photos/600/400?3"
-},
+    gallery.innerHTML = "";
 
-{
-title:"Photo Four",
-caption:"Travel memories",
-image:"https://picsum.photos/600/400?4"
-},
+    for (const p of photos) {
 
-{
-title:"Photo Five",
-caption:"Wonderful trip",
-image:"https://picsum.photos/600/400?5"
-},
+        const card = document.createElement("div");
+        card.className = "photo";
 
-{
-title:"Photo Six",
-caption:"Friends together",
-image:"https://picsum.photos/600/400?6"
+        card.innerHTML = `
+            <img src="${p.thumbnail}" alt="${p.title}">
+            <div class="caption">
+                <h3>${p.title}</h3>
+                <p>${p.caption}</p>
+            </div>
+        `;
+
+        gallery.appendChild(card);
+    }
+
+    console.log(`Loaded ${photos.length} photos`);
 }
 
-];
-
-for(const p of photos){
-
-const card=document.createElement("div");
-
-card.className="photo";
-
-card.innerHTML=`
-
-<img src="${p.image}" alt="${p.title}">
-
-<div class="caption">
-
-<strong>${p.title}</strong><br>
-
-${p.caption}
-
-</div>
-
-`;
-
-gallery.appendChild(card);
-
-}
+loadGallery();
 
 
-
-
-
-console.log("FFSFBA Gallery Version 0.1");
-
-document.querySelector(".loading").textContent =
-    "Gallery engine loaded successfully!";
 
