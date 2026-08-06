@@ -11,17 +11,17 @@ const USER_ID = config.userId;
 
 export async function getAlbumPhotos(albumId){
 
-    const url =
-`https://www.flickr.com/services/rest/
-?method=flickr.photosets.getPhotos
-&api_key=${API_KEY}
-&photoset_id=${albumId}
-&user_id=${USER_ID}
-&extras=url_l,url_o,url_c,description,date_taken,tags
-&format=json
-&nojsoncallback=1`
-.replace(/\n/g,"");
+const url =
+    "https://www.flickr.com/services/rest/" +
+    "?method=flickr.photosets.getPhotos" +
+    `&api_key=${API_KEY}` +
+    `&photoset_id=${albumId}` +
+    `&user_id=${USER_ID}` +
+    "&extras=url_l,url_c,url_o,description,date_taken,tags" +
+    "&format=json" +
+    "&nojsoncallback=1";
 
+    
     const response = await fetch(url);
 
     if(!response.ok){
