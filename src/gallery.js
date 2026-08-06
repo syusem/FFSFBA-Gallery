@@ -6,7 +6,11 @@ async function loadGallery() {
 
     const response = await fetch("data/calgary.json");
 
-    const photos = await response.json();
+//    const photos = await response.json();
+
+    const photos =
+    await getAlbumPhotos(albumID);
+
 
     gallery.innerHTML = "";
 
