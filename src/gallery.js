@@ -1,39 +1,67 @@
+
+import { getAlbumPhotos } from "./flickr-api.js";
+
 async function loadGallery() {
+
+    const section = document.getElementById("gallery");
+
+    const albumID = section.dataset.album;
 
     const gallery = document.getElementById("gallery-grid");
 
-    gallery.innerHTML = "<div class='loading'>Loading photos...</div>";
+    gallery.innerHTML =
+        "<div class='loading'>Loading Flickr photos...</div>";
 
-    const response = await fetch("data/calgary.json");
+    try {
 
-//    const photos = await response.json();
+        const photos = await getAlbumPhotos(albumID);
 
-    const photos =
-    await getAlbumPhotos(albumID);
+        gallery.innerHTML = "";
 
+        for (const p of photos) {
 
-    gallery.innerHTML = "";
+            const image =
+                p.url_l || p.url_c || p.url_o;
 
-    for (const p of photos) {
+            const title =
+                p.title || "";
 
-        const card = document.createElement("div");
-        card.className = "photo";
+            const caption =
+                p.description?._content || "";
 
-        card.innerHTML = `
-            <img src="${p.thumbnail}" alt="${p.title}">
-            <div class="caption">
-                <h3>${p.title}</h3>
-                <p>${p.caption}</p>
-            </div>
-        `;
+            const card = document.createElement("div");
 
-        gallery.appendChild(card);
+            card.className = "photo";
+
+            card.innerHTML = `
+                <img src="${image}" alt="${title}">
+                <div class="caption">
+                    <h3>${title}</h3>
+                    <p>${caption}</p>
+                </div>
+            `;
+
+            gallery.appendChild(card);
+
+        }
+
+        console.log(`Loaded ${photos.length} Flickr photos.`);
+
     }
 
-    console.log(`Loaded ${photos.length} photos`);
+    catch(err){
+
+        console.error(err);
+
+        gallery.innerHTML =
+            `<div class="loading">
+                Unable to load Flickr gallery.
+             </div>`;
+
+    }
+
 }
 
 loadGallery();
-
 
 
