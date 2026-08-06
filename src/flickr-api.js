@@ -3,12 +3,11 @@
 // FFSFBA Gallery
 // =============================================
 
-import {config} from "./config.js";
 
+import { config } from "./config.js";
 
-const API_KEY = "bbd36ebd13c29c1a18367b1df66106f2";
-
-const USER_ID = "44239813@N00";
+const API_KEY = config.apiKey;
+const USER_ID = config.userId;
 
 export async function getAlbumPhotos(albumId){
 
