@@ -3,6 +3,9 @@
 // FFSFBA Gallery
 // =============================================
 
+import {config} from "./config.js";
+
+
 const API_KEY = "bbd36ebd13c29c1a18367b1df66106f2";
 
 const USER_ID = "44239813@N00";
