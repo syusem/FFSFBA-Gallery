@@ -1,3 +1,6 @@
+console.log("Gallery.js Version 2");
+console.log(import.meta.url);
+
 
 import { getAlbumPhotos } from "./flickr-api.js";
 
