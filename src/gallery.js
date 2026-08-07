@@ -176,6 +176,7 @@ async function openLightbox(index) {
 
     try {
 
+        /*
         if (lightbox.requestFullscreen) {
 
             await lightbox.requestFullscreen();
@@ -187,6 +188,8 @@ async function openLightbox(index) {
             lightbox.webkitRequestFullscreen();
 
         }
+        */
+        
 
     }
 
