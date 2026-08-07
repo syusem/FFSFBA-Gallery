@@ -3,6 +3,20 @@ console.log(import.meta.url);
 
 import { getAlbumPhotos } from "./flickr-api.js";
 
+// Read URL parameters
+
+const params = new URLSearchParams(window.location.search);
+
+const albumID =
+    params.get("album");
+
+const galleryTitle =
+    params.get("title") || "Travel Gallery";
+
+document.getElementById("gallery-title").textContent =
+    decodeURIComponent(galleryTitle);
+
+
 
 
 async function loadGallery() {
