@@ -25,7 +25,13 @@ async function loadGallery() {
         "<div class='loading'>Loading Flickr photos...</div>";
 
     try {
+        if (!albumID) {
 
+    gallery.innerHTML =
+        "<div class='loading'>No album specified.</div>";
+    return;
+}
+        
         const photos = await getAlbumPhotos(albumID);
 
         gallery.innerHTML = "";
