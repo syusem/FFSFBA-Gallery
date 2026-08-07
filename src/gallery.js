@@ -18,13 +18,7 @@ document.getElementById("gallery-title").textContent =
 
 
 
-
 async function loadGallery() {
-
-    const section = document.getElementById("gallery");
-
-    const albumID = section.dataset.album;
-
     const gallery = document.getElementById("gallery-grid");
 
     gallery.innerHTML =
