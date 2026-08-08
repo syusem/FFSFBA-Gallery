@@ -131,9 +131,10 @@ function showPhoto(index) {
         photos[currentPhoto];
 
     const image =
-        photo.url_o ||
-        photo.url_l ||
-        photo.url_c;
+    photo.url_l ||
+    photo.url_c ||
+    photo.url_o;
+
 
     const title =
         photo.title || "";
