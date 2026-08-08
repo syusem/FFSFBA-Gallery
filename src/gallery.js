@@ -479,3 +479,57 @@ async function loadGallery() {
 
 loadGallery();
 
+
+
+// --------------------------------------------------
+// Automatically report gallery height to parent page
+// --------------------------------------------------
+
+function reportHeight() {
+
+    const height =
+        document.documentElement.scrollHeight;
+
+    window.parent.postMessage(
+        {
+            type: "FFSFBA_GALLERY_HEIGHT",
+            height: height
+        },
+        "*"
+    );
+
+}
+
+
+// Report initially
+
+reportHeight();
+
+
+// Report again whenever the page changes size
+
+window.addEventListener(
+    "load",
+    reportHeight
+);
+
+window.addEventListener(
+    "resize",
+    reportHeight
+);
+
+
+// Watch for gallery content changes
+
+const heightObserver =
+    new ResizeObserver(
+        function() {
+            reportHeight();
+        }
+    );
+
+heightObserver.observe(
+    document.body
+);
+
+
